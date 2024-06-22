@@ -1,5 +1,4 @@
-<img align="left" src="./github/images/llama.dvd.cover.png">
-The term RAG, is always mystical to me......What are the exact meaning of these letters? To alleviate the stress from thinking, I decided to call my project as llama.DVD concisely, which means **D**ocument **V**ectorization **D**igging, it is constructed with the technique of RAG, and works with [llama.cpp](https://github.com/ggerganov/llama.cpp)
+<img align="left" src="./github/images/llama.dvd.cover.png">The term RAG, is always mystical to me......What are the exact meaning of these letters? To alleviate the stress from thinking, I decided to call my project as llama.DVD concisely, which means **D**ocument **V**ectorization **D**igging, it is constructed with the technique of RAG, and works with [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 If you have no idea about RAG,LLM or anything related, please leave now, because following content may give you headache or lethargy.
 
@@ -40,7 +39,7 @@ A number should be shown, if it is zero, good, otherwise, open this script with 
 -c <1 or higher, about the richness of content. Higher means more abundant, but slower.>
 ```
 Before you launch it, please enable *llama.cpp server* with this: 
-`./server.run` And do this to stop *llama.cpp server*:`./stop.run`
+`./server.run` And you can stop *llama.cpp server* later: `./stop.run`
 
 Don't forget to set permissions for both ".run" scripts in your Mac OS/Linux system before you launch them: `chmod 755 server.run`
 For Microsoft Windows system, please rename ".run" to ".bat" to instruct system how to execute them.
@@ -59,7 +58,6 @@ python dig.py -q "Who is Adam" -c 2
 - If you want to switch to another model for *llama.cpp server*, please place the model (file) into subfolder names *"models"* and **rename** this model to be *_* (underline). Similarly, one level down from *"models"* subfolder, there is a subfolder names *"embedding"*, that is: *models/embedding*, you can copy embedding model files there, if you want to try another embedding model. Be aware, you should clear this subfolder before copying to avoid chaos.
 
 ## Supplement
-<img align="right" src="./github/images/llama.dvd.illustration-1.png">
-Why do I create this project? Well, I try to put the technical idea of RAG into practice and see how far it can go, another reason is, get rid of the annoying "Version Restriction", I mean, I was going to run a llama.cpp-based application that was widely acclaimed, unfortunately, it doesn't work on macOS with version earlier than 11(Big Sur), that says, it can't work on my macOS Catalina......I really don't see how the functionality of that application has much to do with the version of OS, can I bypass these inexplicable constraints to achieve what I want?
+<img align="right" src="./github/images/llama.dvd.illustration-1.png">Why do I create this project? Well, I try to put the technical idea of RAG into practice and see how far it can go, another reason is, get rid of the annoying "Version Restriction", I mean, I was going to run a llama.cpp-based application that was widely acclaimed, unfortunately, it doesn't work on macOS with version earlier than 11(Big Sur), that says, it can't work on my macOS Catalina......I really don't see how the functionality of that application has much to do with the version of OS, can I bypass these inexplicable constraints to achieve what I want?
 
 At present, this is a conceptual design, not a full-fledged application, so, it is not necessasry to compare it with others. However, it will be upgraded continuously, and your comments are welcome.
