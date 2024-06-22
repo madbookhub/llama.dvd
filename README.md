@@ -36,7 +36,8 @@ A number should be shown, if it is zero, good, otherwise, open this script with 
 **dig.py**, which allows you to submit queries about the content of your document to *llama.cpp server*. Here is the list of arguments:
 ```
 -q <Your query, wrapped with double quotation marks, needful.>
--c <1 or higher, about the richness of content. Higher means more abundant, but slower.>
+-c <1 or higher, the richness level. Higher means more accurate, but slower.>
+-o <By default, its value is 1, which means **no** query will be sent to LLM server.>
 ```
 Before you launch it, please enable *llama.cpp server* with this: 
 `./server.run` And you can stop *llama.cpp server* later: `./stop.run`
@@ -44,13 +45,20 @@ Before you launch it, please enable *llama.cpp server* with this:
 Don't forget to set permissions for both ".run" scripts in your Mac OS/Linux system before you launch them: `chmod 755 server.run`
 For Microsoft Windows system, please rename ".run" to ".bat" to instruct system how to execute them.
 
-Once *llama.cpp server* is enabled, you can submit any query about the content of your document to it.
+Once *llama.cpp server* is enabled, you can submit any query about the content of your document to it. Following demonstrates how to query about "Test":
+```
+python dig.py -q "Test" -c 2 -o 0
+```
+If you don't want to talk to *llama.cpp server*, please set the argument *-o* to 1, or, just skip it.
+```
+python dig.py -q "Test" -c 2
+```
 
 ---
 
-- The built-in text document is called "genesis.txt" and is taken from parts of the Bible, its vector dataset has been generated, there is no need to make embedding for it by yourself (unless the vector dataset was changed or removed), you can query something about it directly, like this:
+- The built-in text document is called "genesis.txt", is taken from parts of the Bible, its vector dataset has been generated, there is no need to make embedding for it by yourself (unless the vector dataset was changed or removed), you can query something about it directly, like this:
 ```
-python dig.py -q "Who is Adam" -c 2
+python dig.py -q "Who is Adam" -c 2 -o 0
 ```
 
 - Everytime you make embedding for your document, the existing vector dataset is **overwritten**, and subsequent query will take it, you don't have to modify any dataset or model manually.
@@ -61,3 +69,5 @@ python dig.py -q "Who is Adam" -c 2
 <img align="right" src="./github/images/llama.dvd.illustration-1.png">Why do I create this project? Well, I try to put the technical idea of RAG into practice and see how far it can go, another reason is, get rid of the annoying "Version Restriction", I mean, I was going to run a llama.cpp-based application that was widely acclaimed, unfortunately, it doesn't work on macOS with version earlier than 11(Big Sur), that says, it can't work on my macOS Catalina......I really don't see how the functionality of that application has much to do with the version of OS, can I bypass these inexplicable constraints to achieve what I want?
 
 At present, this is a conceptual design, not a full-fledged application, so, it is not necessasry to compare it with others. However, it will be upgraded continuously, and your comments are welcome.
+
+
