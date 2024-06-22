@@ -1,5 +1,6 @@
-<img align="left" src="./github/images/llama.dvd.cover.png"> 
-The term RAG, is always mystical to me......What words do these letters represent? And what do those words mean? To alleviate the stress from thinking, I decided to call my project as llama.DVD concisely, which means ***D***ocument ***V***ectorization ***D***igging, constructed with the technique of RAG, and works with [llama.cpp](https://github.com/ggerganov/llama.cpp)
+<img align="left" src="./github/images/llama.dvd.cover.png">
+
+The term RAG, is always mystical to me......What words do these letters represent? And what do those words mean? To alleviate the stress from thinking, I decided to call my project as llama.DVD concisely, which means **D**ocument **V**ectorization **D**igging, constructed with the technique of RAG, and works with [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 If you have no idea about RAG,LLM or anything related, please leave now, because following content may give you headache or lethargy.
 
@@ -10,6 +11,8 @@ May I remind you: They are independent of each other, that means, you do not hav
 
 ## Components
 This project is made with Python, just as above description, there are two Python scripts: *vectorize.py* and *dig.py*. Perhaps you may know their functions with the names immediately.
+
+---
 
 **vectorize.py**, as the name suggests, generates a vector dataset based on the content of your document. Here is its arguments list:
 ```
@@ -29,6 +32,8 @@ or
 Microsoft Windows>echo %ERRORLEVEL%
 ```
 A number should be shown, if it is zero, good, otherwise, open this script with your text editor, find out the code line which contains that number, analyse it, and then do something to resolve the problem, if you are confident in your programming ability and patient, or, just remove this suite right away, don't waste your time.
+
+---
 
 **dig.py**, which allows you to submit queries about the content of your document to *llama.cpp server*. This is the list of arguments:
 ```
