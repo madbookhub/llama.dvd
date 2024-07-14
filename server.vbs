@@ -1,0 +1,1 @@
+createobject("wscript.shell").run "server\server -t 4 -m models\_",0
