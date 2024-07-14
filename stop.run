@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Name of process to be terminated.
+PROCESS_NAME="server"
+ 
+# Try to find out the PID of the process.
+PID=$(pgrep ${PROCESS_NAME})
+ 
+# Terminate it if it is there.
+if [ -z "$PID" ]; then
+    :
+else
+    nohup kill ${PID} &>/dev/null &
+fi
