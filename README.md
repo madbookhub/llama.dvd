@@ -52,8 +52,8 @@ python dig.py -q "Test"
 
 **Attention**
 Before you try the scripts, please...
-- Download your favorite one from tons of versions of [llama.cpp server]<https://github.com/ggerganov/llama.cpp/releases?> ,and copy the *llama server* application from it into subfolder names *"server"*. Please note that the name of *llama server* application should be named as *server* definitely by yourself, if you want to activate *llama server* with above *server.run* or *server.vbs* script.
-- You should also download any proper LLM model, like [this]<https://hf-mirror.com/Qwen>, place it into subfolder names *"models"*, please **rename** the model (file) to be *_*(underline) if you want to activate *llama server* with above scripts. Similarly, one level down from the *"models"* subfolder, there is a subfolder names *"embedding"*, that is:*models/embedding*, copy embedding model files (like [this]<https://hf-mirror.com/moka-ai>) there please.
+- Download your favorite one from tons of versions of [llama.cpp](https://github.com/ggerganov/llama.cpp/releases?) ,and copy the *llama server* application from it into subfolder names *"server"*. Please note that the name of *llama server* application should be named as *server* definitely by yourself, if you want to activate *llama server* with above *server.run* or *server.vbs* script.
+- You should also download any proper LLM model, like [this](https://hf-mirror.com/Qwen), place it into subfolder names *"models"*, please **rename** the model (file) to be *_*(underline) if you want to activate *llama server* with above scripts. Similarly, one level down from the *"models"* subfolder, there is a subfolder names *"embedding"*, that is:*models/embedding*, copy embedding model files (like [this](https://hf-mirror.com/moka-ai>) there please.
 
 ---
 
@@ -61,7 +61,7 @@ Before you try the scripts, please...
 ```
 python dig.py -q "Who is Adam's wife?"
 ```
-<img align="right" src="./github/images/llama.dvd.screenshot-query.png">
+<img align="left" src="./github/images/llama.dvd.screenshot-query.png">
 
 - Everytime you make embedding for your document, the existing vector dataset is **overwritten**, and subsequent query will take it unawares, you don't have to modify any dataset manually.
 
