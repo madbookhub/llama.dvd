@@ -50,21 +50,18 @@ Once *llama.cpp server* is enabled, you can submit any query about the content o
 python dig.py -q "Test"
 ```
 
-**Attention**
-
-Before you try the scripts, please...
-- Download your favorite one from tons of versions of [llama.cpp](https://github.com/ggerganov/llama.cpp/releases?) ,and copy the *llama server* application from it into subfolder names *"server"*. Please note that the name of *llama server* application should be named as *server* definitely by yourself, if you want to activate *llama server* with above *server.run* or *server.vbs* script.
-- You should also download any proper LLM model, like [this](https://hf-mirror.com/Qwen), place it into subfolder names *"models"*, please **rename** the model (file) to be *_*(underline) if you want to activate *llama server* with above scripts. Similarly, one level down from the *"models"* subfolder, there is a subfolder names *"embedding"*, that is:*models/embedding*, copy embedding model files (like [this](https://hf-mirror.com/moka-ai>)) there please.
-
 ---
 
-- The built-in text document is called "genesis.txt", is taken from parts of the Bible, its vector dataset has been generated, there is no need to make embedding for it by yourself (unless the vector dataset was changed or removed), you can query something about it directly, like this:
+Before you try the scripts, please know that...
+- Download your favorite one from tons of versions of [llama.cpp](https://github.com/ggerganov/llama.cpp/releases?) ,and copy the *llama server* application from it into subfolder names *"server"*. The name of *llama server* application SHOULD be named as *server* definitely by yourself, if you want to activate *llama server* with above *server.run* or *server.vbs* script.
+- You should also download any proper LLM model, like [this](https://hf-mirror.com/Qwen), place it into subfolder names *"models"*, please **rename** the model (file) to be **_**(underline) if you want to activate *llama server* with above scripts. Similarly, one level down from the *"models"* subfolder, there is a subfolder names *"embedding"*, that is:*models/embedding*, copy embedding model files (like [this](https://hf-mirror.com/moka-ai>)) there please.
+- The built-in text document is called "genesis.txt", is taken from parts of the Bible, its vector dataset has been generated already, there is no need to make embedding for it by yourself (unless the vector dataset is changed or removed), you can query something about it directly, like this:
 <img align="left" src="./github/images/llama.dvd.screenshot-query.png">
 
 - Everytime you make embedding for your document, the existing vector dataset is **overwritten**, and subsequent query will take it unawares, you don't have to modify any dataset manually.
 
 ## Supplement
-<img align="right" src="./github/images/llama.dvd.end.png">Why do I create this project? Well, I try to put the technical idea of RAG into practice and see how far it can go, another reason is, get rid of the annoying "Version Restriction", I mean, I was going to run a llama.cpp-based application that was widely acclaimed, unfortunately, it doesn't work on macOS with version earlier than 11(Big Sur), that says, it can't work on my macOS Catalina......I really don't see how the functionality of that application has much to do with the version of OS, can I bypass these inexplicable constraints to achieve what I want?
+<img align="right" src="./github/images/llama.dvd.end.png">Why do I create this project? Well, I try to put the technical idea of RAG into practice and see how far it can go, another reason is, get rid of the annoying "Version Restriction", I mean, I was going to run a llama.cpp-based application that was widely acclaimed, unfortunately, it doesn't work on macOS with version earlier than 11(Big Sur), that says, it can't work on my macOS Catalina......I really don't see how the functionality of that application has much to do with the version of OS, can I bypass these inexplicable constraints to achieve what I want? Or say,is it possible to run LLM on my "poor" machine successfully to ease my frustration about not being able to afford an expensive GPU graphic card?
 
 At present, this is a conceptual design, not a full-fledged application, so, it is not necessasry to compare it with others. However, it will be upgraded continuously, and your comments are welcome.
 
