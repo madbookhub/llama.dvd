@@ -6,7 +6,8 @@ from modules.llm import *
 # ----------------------------------------
 _ = GetReady()
 if not _ : exit(1)
-OutputMode, QuantityofContext, Richness, Query = _['output'], _['context'], _['richness'], _['query']
+OutputMode, QuantityofContext, FreeplayLevel, Richness, Query = \
+  _["output"], _["context"], _["freeplay"], _["richness"], _["query"]
 
 
 Embedder = GetEmbedding()
@@ -25,10 +26,12 @@ if not isinstance( Context, list ) : exit(5)
 
 
 if OutputMode == OUTPUT_DIG :
-	QuerytoLLM( Richness, Query, Context )
+	QuerytoLLM( FreeplayLevel, Richness, Query, Context )
 else:
 	for _ in Context : print( _ )
-	if OutputMode == OUTPUT_ALL: QuerytoLLM( Richness, Query, Context )
+	
+	if OutputMode == OUTPUT_ALL:
+		QuerytoLLM( FreeplayLevel, Richness, Query, Context )
 
 
 exit(0)
