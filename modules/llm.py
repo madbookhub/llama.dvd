@@ -10,12 +10,11 @@ Please provide a detailed answer (include key points, practical applications, an
 """
 
 # ----------------------------------------
-LLM_TEMPERATURE = 0.5
 LLM_PREFIX = "data: "
 LLM_URL = "http://localhost:8080/completion" 
 
 # ----------------------------------------
-def QuerytoLLM( SizeofPrediction, Query, Context ):
+def QuerytoLLM( LevelofFreeplay, SizeofPrediction, Query, Context ):
 
 	# case of llama.cpp Server service
 
@@ -24,7 +23,7 @@ def QuerytoLLM( SizeofPrediction, Query, Context ):
 
 	Content = re.sub( "[\r\n]", '', ''.join(Context) ) # To enhandce inference?
 
-	Body = { "stream":True, "n_predict":SizeofPrediction, "temperature":LLM_TEMPERATURE, "prompt":PROMPT % ( Query, Content ) }
+	Body = { "stream":True, "n_predict":SizeofPrediction, "temperature":LevelofFreeplay, "prompt":PROMPT % ( Query, Content ) }
 
 	Data = json.dumps( Body ).encode("utf-8")
 
