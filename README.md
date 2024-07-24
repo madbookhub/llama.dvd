@@ -37,7 +37,8 @@ A number should be shown, if it is zero, good, otherwise, open this script with 
 ```
 -q <Your query, wrapped with double quotation marks, needful.>
 -c <1 or higher, the quantity of vectors. Higher means more references, but slower.>
--r <The level of richness of response. Score:1, 2(default), 3 >
+-f <Level of free-play, which is usually called "temperature" also. Score:1 to 9.>
+-r <Level of richness of response. Score:1, 2(default), 3 >
 -o <Mode of output, where 1 means NOTHING will be sent to LLM server, and 2(default) for normal.>
 ```
 Before you launch it, please enable *llama.cpp server* with this: 
