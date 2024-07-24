@@ -8,6 +8,10 @@ CASEOFDIG = 0
 MIN_TOKENLENGTH = 128
 DEF_TOKENLENGTH = 512
 
+MIN_FREEPLAY = 1
+MAX_FREEPLAY = 9
+DEF_FREEPLAY = 5
+
 MAX_QUANTITYOFCONTEXT = 5
 DEF_QUANTITYOFCONTEXT = 1
 
@@ -27,6 +31,7 @@ VECTORSFILE = "vectors.json"
 ARGS = {
 		"context" : [int, "--context", "-c", DEF_QUANTITYOFCONTEXT],
 		"document" : [str, "--document", "-d", ""],
+		"freeplay" : [int, "--freeplay", "-f", DEF_FREEPLAY],
 		"output" : [int, "--output", "-o", DEF_OUTPUT],
 		"query" : [str, "--query", "-q", ""],
 		"richness" : [int, "--richness", "-r", DEF_RICHNESS],
