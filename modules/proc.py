@@ -44,6 +44,12 @@ def GetReady( Case = CASEOFDIG ):
 			if _ > 0 : Result[Name] = _
 			else: return False
 
+		elif Name == "freeplay" :
+			if MIN_FREEPLAY <= Value <= MAX_FREEPLAY :
+				Result[Name] = round( Value/10, 1 )
+			else :
+				return False
+
 		elif Name == "output" :
 			if Value in [OUTPUT_VECTORS, OUTPUT_DIG, OUTPUT_ALL]:
 				Result[Name] = Value
