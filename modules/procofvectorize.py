@@ -12,11 +12,12 @@ def Chunk( SizeofChunk, Content ):
 
 	# Give up if wihtou proper arguments !
 	if not isinstance( Content, str ) : return False
-	Remain = len( Content )
-	if Remain == 0 or SizeofChunk < MIN_TOKENLENGTH : return False
+	if len( Content ) == 0 or SizeofChunk < MIN_TOKENLENGTH : return False
+	# Note: Actually, SizeofChunk means the length of Content, in characters, but not tokens.
 
-	LengthofOverlap = SizeofChunk // 3 # about 1/3
+	Tokenizer = tiktoken.get_encoding( TOKEN_ENCODING )
 
+	Overlap = ''
 	Chunks = []
 
 	# Chunk, means splitting the content of document to multi parts, but, how to avoid the mistake of sundering a word while splitting? The first trick is splitting all lines, because each line is a natural separator which splits content without cut any words incorrectly.
@@ -29,7 +30,7 @@ def Chunk( SizeofChunk, Content ):
 	
 		while Remain > 0 :
 			if Remain <= SizeofChunk :
-				Chunks.append( ThisLine[Since:] )
+				Chunks.append( Overlap + ThisLine[Since:] )
 				Remain = 0
 			else:
 				Anchor = Till # save it because this pointer will be moved.
@@ -41,7 +42,11 @@ def Chunk( SizeofChunk, Content ):
 
 				if Till == Since : Till = Anchor # no space? copy all!
 				
-				Chunk.append( ThisLine[Since:Till+1] ) # don't miss the space.
+				Chunk.append( Overlap + ThisLine[Since:Till+1] )
+
+				# get overlap (which will be inserted into next chunk)
+				Tokens = ( Tokenizer.encode( ThisLine[Since:Till+1] ) )[-TOKEN_OVERLAPSIZE:]
+				Overlap = ''.join( [Tokenizer.decode([_]) for _ in Tokens] )
 
 				Remain -= ( Till - Since +1 )
 				# Move the pointer! Be aware that Since and Till may be same.
@@ -51,11 +56,11 @@ def Chunk( SizeofChunk, Content ):
 
 # ----------------------------------------
 def GetContentofDocument( TokenLength, NameofDocument ):
-	try:
-		with open(NameofDocument, 'r', encoding='utf-8') as _:
-			return Chunk( TokenLength, _.read() )
-	except:
-		return None
+	#try:
+	with open(NameofDocument, 'r', encoding='utf-8') as _:
+		return Chunk( TokenLength, _.read() )
+	#except:
+	#	return None
 	return
 
 # ----------------------------------------

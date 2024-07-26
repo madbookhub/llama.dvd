@@ -23,6 +23,9 @@ DEF_OUTPUT = OUTPUT_DIG
 RICHNESS = [{"level":1,"predict":30},{"level":2,"predict":70},{"level":3,"predict":128}]
 DEF_RICHNESS = 2 # level 2
 
+TOKEN_ENCODING = "cl100k_base"
+TOKEN_OVERLAPSIZE = 12
+
 DOCUMENTFOLDER = "documents/"
 VECTORSFOLDER = "vectors/"
 COMPILEDFILE = "document.json"
