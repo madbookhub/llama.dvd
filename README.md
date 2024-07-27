@@ -74,4 +74,5 @@ It is recommended that you should install following modules to ensure that the s
 
 At present, this is a conceptual design, not a full-fledged application, so, it is not necessasry to compare it with others. However, it will be upgraded continuously, and your comments are welcome.
 
+Thanks to [KMnO4-zx](https://github.com/KMnO4-zx/TinyRAG)
 
